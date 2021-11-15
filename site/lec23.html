@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lec23 Media Queries</title>
+<style>
+* {
+    box-sizing:  border-box;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin-bottom: 15px;
+}
+p{
+    border: 1px solid black;
+    margin-bottom: 15px;
+}
+div{
+    position: absolute;
+}
+#p1{
+background-color: rgb(206, 206, 193);
+height: 300px;
+width:300px;
+
+}
+#p2{
+background-color: darkred;
+width:50px;
+height: 50px;
+}
+/****** large device *****/
+@media (min-width:1200px){
+    #p1{
+        width:80%;
+    }
+    #p2{
+        width:150px;
+        height:150px;
+    }
+}
+/***medium size***/
+@media (min-width:992px) and (max-width:1199px){
+    #p1{
+        width:50%;
+    }
+    #p2{
+        width:100px;
+        height:100px;
+    }
+}
+</style>
+</head>
+<body>
+    <h1>Media Queries</h1>
+    <div>
+    <p id="p1">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis tincidunt sodales sapien et bibendum. Vestibulum nibh leo, mattis vel iaculis eu, viverra sed diam. Ut molestie, dolor sit amet volutpat pretium, nulla erat cursus purus, sit amet finibus ante neque non magna. Curabitur pretium ex ac accumsan euismod. Donec tincidunt, purus cursus egestas vestibulum, nisl odio condimentum felis, quis rutrum sem lorem a nibh. In vel sem hendrerit, consequat odio vel, convallis dolor. Pellentesque pellentesque bibendum lacus at vestibulum. Aliquam at justo laoreet, ultricies arcu eu, consectetur quam. Sed vehicula gravida urna, ut ornare lorem tristique finibus. Quisque sit amet quam a neque tempor laoreet.
+    </p>
+    <p id="p2">
+        Lorem ipsum dolor sit amet
+    </p>
+    </div>
+
+
+
+</body>
+</html>

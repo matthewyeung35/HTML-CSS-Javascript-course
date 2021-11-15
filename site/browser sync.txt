@@ -1,0 +1,2 @@
+cd E:\programming\html_css_javascript\HTML-CSS-Javascript-course\site
+browser-sync start --server --directory --files "*"

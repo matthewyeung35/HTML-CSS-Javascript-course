@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lec21 Floating</title>
+<style>
+div {
+  background-color: #00FFFF;
+}
+p{
+  width: 50px;
+  height:50px;
+  border: 1px solid black;
+}
+#p1{
+background-color: blue;
+float: left;
+height: 100px
+}
+#p2{
+background-color: darkred;
+float:right;
+height: 200px
+}
+#p3
+{
+background-color: gold;
+clear: both;
+}
+#p4{
+background-color: lightpink;
+}
+
+section{
+  clear: left;
+}
+
+.p2{
+width: 300px;
+border: 1px solid black;
+float:left;
+height: 500px;
+padding:10px;
+}
+#p5{
+  background-color: lightseagreen;
+}
+#p6{
+  background-color: magenta;
+}
+
+#{
+  box-sizing: border-box;
+}
+</style>
+</head>
+<body>
+    <h1>Floating elements</h1>
+    <div>
+      <p id='p1'></p>
+      <p id='p2'></p>
+      <p id='p3'></p>
+      <p id='p4'></p>
+      <section> This is regular conent after p</section>
+    </div>
+    <div style='background-color: papayawhip;'>
+      <p class='p2' id='p5'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lorem quis mauris tempus convallis. Sed est dolor, tristique vitae finibus nec, cursus in velit. Duis a dignissim enim. Vivamus venenatis turpis at diam faucibus, ut malesuada elit venenatis. Aliquam in mi ac lectus cursus volutpat. Vestibulum congue ultricies turpis, vitae euismod est finibus posuere. Vivamus tincidunt diam quis elit semper, sit amet porttitor ex ornare. Suspendisse fermentum neque eu mauris elementum, at ornare neque dignissim. Mauris fringilla felis a ligula viverra imperdiet. Phasellus a nunc vitae lorem suscipit mattis nec sit amet libero. Nullam libero velit, iaculis sit amet metus a, mollis pharetra arcu. Suspendisse tristique nulla at erat venenatis, eu venenatis ex faucibus. Phasellus molestie, ligula in feugiat tempor, purus nibh venenatis mi, posuere volutpat lorem dui eget ipsum. Nunc vel semper ligula, ac scelerisque turpis. Nulla consequat, urna eu pellentesque maximus, nisi elit porttitor risus, vel bibendum dui nunc ut ligula.</p>.
+      <p class='p2' id='p6'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rhoncus lorem quis mauris tempus convallis. Sed est dolor, tristique vitae finibus nec, cursus in velit. Duis a dignissim enim. Vivamus venenatis turpis at diam faucibus, ut malesuada elit venenatis. Aliquam in mi ac lectus cursus volutpat. Vestibulum congue ultricies turpis, vitae euismod est finibus posuere. Vivamus tincidunt diam quis elit semper, sit amet porttitor ex ornare. Suspendisse fermentum neque eu mauris elementum, at ornare neque dignissim. Mauris fringilla felis a ligula viverra imperdiet. Phasellus a nunc vitae lorem suscipit mattis nec sit amet libero. Nullam libero velit, iaculis sit amet metus a, mollis pharetra arcu. Suspendisse tristique nulla at erat venenatis, eu venenatis ex faucibus. Phasellus molestie, ligula in feugiat tempor, purus nibh venenatis mi, posuere volutpat lorem dui eget ipsum. Nunc vel semper ligula, ac scelerisque turpis. Nulla consequat, urna eu pellentesque maximus, nisi elit porttitor risus, vel bibendum dui nunc ut ligula.</p>.
+      <section> This is regular conent after p</section>
+    </div>
+
+
+
+</body>
+</html>
