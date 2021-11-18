@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-wdth, initial-scale=1">
+<title>Bootstrap starter page</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<style>
+    .row{
+        margin-bottom: 10px;
+    }
+    .row>div{
+        border: 2px solid red;
+        background-color: gainsboro;
+    }
+    div:hover, a:hover{
+        background-color: black;
+        color: gainsboro;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .a_box{
+        border: 2px solid red;
+        background-color: gainsboro;
+        color:black;
+    }
+
+</style>
+</head>
+<body>
+<h1>Hello</h1>
+<header class="container">
+    <nav class="row">
+        <div class="col-md-4 col-sm-6">Col1</div>
+        <div class="col-md-4 col-sm-6">Col2</div>
+        <div class="col-md-4 col-sm-6">Col3</div>
+    </nav>
+    <nav class="row">
+        <div class="col-md-4 col-sm-6 col-xs-6">Col1</div>
+        <div class="col-md-4 col-sm-6 col-xs-6">Col2</div>
+        <div class="col-md-4 col-sm-6 col-xs-6">Col3</div>
+    </nav>
+    <nav class="row">
+        <a href="http://google.com" class="col-xs-4 a_box">Google</a></div>
+        
+        <div class="col-xs-4">Col2</div>
+        <div class="col-xs-4">Col3</div>
+    </nav>
+</header>
+<p>Normal flow</p>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
