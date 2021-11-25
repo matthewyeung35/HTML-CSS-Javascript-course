@@ -58,7 +58,8 @@ body{
       font-size: 1.5em;
   }
   #phone{
-      margin-top:5px;
+      height:auto;
+
   }
   #phone a{
       text-align:right;
@@ -72,10 +73,9 @@ body{
 .custom-toggler.navbar-toggler {
     border: 2px solid #61122f;
     clear:both;
-    margin-top
 }
-.container-fluid button.navbar-toggler{
-    margin-top:-10px;
+.container button.navbar-toggler{
+    margin-top:px;
 }
 
 .active{
@@ -339,3 +339,4 @@ h3.menu-item-title{
     }
 
 }
+
