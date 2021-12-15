@@ -5,3 +5,4 @@ hiGreeter.sayHi();
 (function (name){
     console.log("Hello " + name);
 })("world");
+(function(){})();
