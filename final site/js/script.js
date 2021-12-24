@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded",
 
     });
 
+var testing = function(){
+    console.log("hi")
+};
+
+
 (function(global){
 var dc = {};
 
@@ -22,8 +27,9 @@ var categoryHtml = "snippets/category-snippet.html";
 var menuItemsUrl = "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 var menuItemsTitleHtml = "snippets/menu-items-title.html";
 var menuItemHtml = "snippets/menu-item.html";
+var creditHtml = "snippets/credit-snippet.html";
 
-// for insreting innerHTMl for selects
+// for inserting innerHTMl for selects
 var insertHtml = function (selector, html){
     var targetElem = document.querySelector(selector);
     targetElem.innerHTML = html;
@@ -43,6 +49,20 @@ var insertProperty = function (string, propName, propValue){
     return string
 }
 
+var switchMenuToActive = function(){
+    //remove 'active' from home button 
+    var classes = document.querySelector("#navHomeButton").className;
+    classes = classes.replace(new RegExp("active", "g"), "");
+    document.querySelector("#navHomeButton").className = classes;
+    //add 'active' to menu button
+    classes = document.querySelector("#navMenuButton").className;
+    if (classes.indexOf("active") == -1){
+        classes += " active";
+        document.querySelector("#navMenuButton").className = classes;
+    }
+};
+
+// on page load before image and css
 document.addEventListener("DOMContentLoaded", function (event){
 showLoading("#main-content");
 $ajaxUtils.sendGetRequest(
@@ -63,6 +83,17 @@ dc.loadMenuCategories = function (){
     );
 };
 
+dc.loadCredit = function (){
+    showLoading("#main-content");
+    $ajaxUtils.sendGetRequest(
+        creditHtml,
+        function (responseText){
+            document.querySelector("#main-content")
+            .innerHTML = responseText;
+        },
+        false);
+};
+
 function buildAndShowCategoriesHTML(categories){
     $ajaxUtils.sendGetRequest(
         categoriesTitleHtml,
@@ -70,6 +101,7 @@ function buildAndShowCategoriesHTML(categories){
             $ajaxUtils.sendGetRequest(
                 categoryHtml,
                 function(categoryHtml) {
+                    switchMenuToActive();
                     var categoriesViewHtml =
                     buildCategoriesViewHtml(categories,
                         categoriesTitleHtml,
@@ -111,21 +143,22 @@ dc.loadMenuItems = function (categoryShort){
 function buildAndShowMenuItemsHTML(categoryMenuItems){
     $ajaxUtils.sendGetRequest(
         menuItemsTitleHtml,
-        function (menuItemsTitleHtml){
+        function (menuItemsTitleHtml) {
             $ajaxUtils.sendGetRequest(
                 menuItemHtml,
-                function (menuItemHtml){
+                function (menuItemHtml) {
+                    switchMenuToActive();
                     var menuItemsViewHtml = 
                     buildMenuItemsViewHtml(categoryMenuItems,
                         menuItemsTitleHtml,
                         menuItemHtml);
-                    insertHtml("#main-context", menuItemsViewHtml)
+                insertHtml("#main-content", menuItemsViewHtml);
                 },
                 false);
     },
     false);
 }
-    
+
 function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemHtml){
     menuItemsTitleHtml = insertProperty(menuItemsTitleHtml,"name",categoryMenuItems.category.name);
 
@@ -142,7 +175,7 @@ function buildMenuItemsViewHtml(categoryMenuItems, menuItemsTitleHtml, menuItemH
         html = insertProperty(html, "short_name", menuItems[i].short_name);
         html = insertProperty(html,"catShortName",catShortName);
         html = insertItemPrice(html,"price_small",menuItems[i].price_small);
-        html = insertItemPortionName(html,"small_portion_name",menuItems[i].menuItems[i].small_portion_name);
+        html = insertItemPortionName(html,"small_portion_name",menuItems[i].small_portion_name);
         html = insertItemPrice(html,"price_large",menuItems[i].price_large);
         html = insertItemPortionName(html,"large_portion_name",menuItems[i].large_portion_name);
         html = insertProperty(html,"name",menuItems[i].name);
